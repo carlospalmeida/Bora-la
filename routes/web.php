@@ -14,15 +14,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('caminho');
 });
+
+Route::get('/caminho', function () {
+    return view('caminho');
+})->name('caminho');;
+
+Route::get('/linhas', function () {
+    return view('linhas');
+})->name('linhas');
+
+Route::get('/termos', function () {
+    return view('termos');
+})->name('termos');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('carona');
     })->name('dashboard');
+
+    // Route::get('/carona', function () {
+    //     return view('carona');
+    // })->name('carona');
+    
+    Route::get('/perfil', function () {
+        return view('perfil');
+    })->name('perfil');
+
 });

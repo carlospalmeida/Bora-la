@@ -34,10 +34,16 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{{route('caminho')}}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login.html">Registrar/logar</a>
+                                <a class="nav-link" href="{{route('login')}}">Registrar/logar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('dashboard')}}">Carona</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('perfil')}}">Perfil</a>
                             </li>
                         </ul>
                     </div>
@@ -54,9 +60,9 @@
         <!-- Barra lateral -->
         <div class="container mt-5" id="BarraLateralEsquerda">
             <div class="row">
-                <div class="col-md-3">
-
-                </div>
+                
+                @yield('conteudo')
+               
             </div>
         </div>
 
@@ -69,13 +75,13 @@
                     <h5 class="h1 text-white">CAEP</h5>
                     <p class="small text-muted">Centro de administração empresarial Pereira <br> Bora-lá.</p>
                     <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="https://www.linkedin.com/in/carlos-eduardo-pereira-almeida-251b03239/">Carlos Eduardo</a></p>
-                    <p class="small text-muted mb-0"><a class="text-primary" href="Termos.html">Termos e condições</a></p>
+                    <p class="small text-muted mb-0"><a class="text-primary" href="{{route('termos')}}">Termos e condições</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
-   
+
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
