@@ -40,7 +40,7 @@
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-            O nosso site coleta dados basicos de informações para o usuario comun que fará uso do <a href="{{route('carona')}}">CARONA</a>,entretanto o usúario que deseja prestar serviço atraves do nosso site terá as seguintes informações coletadas: <br>
+            O nosso site coleta dados basicos de informações para o usuario comun que fará uso do <a href="{{route('caminho')}}">CARONA</a>,entretanto o usúario que deseja prestar serviço atraves do nosso site terá as seguintes informações coletadas: <br>
             Documento do veiculo; <br>
             Habilitação; <br>
             e Email (sendo esse para ambos); <br>
@@ -82,7 +82,6 @@
                 <div class="accordion-body">
                     Todas as informações e dados presentes nesse projeto foram tirados das respectivos
                     lugares <br>
-                    Google api <br>
                     IBGE <br>
                     Api diversas <br>
                     Mais informações e teconlogias na <a href="https://github.com/carlospalmeida/front_end_BUSER-HELP">documentação</a>

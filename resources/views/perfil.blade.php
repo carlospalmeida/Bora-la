@@ -15,7 +15,15 @@
                         <p class="text-muted mb-4">São josé dos campos, SP</p>
                         <div class="d-flex justify-content-center mb-2">
                             <a href="#"><button type="button" class="btn btn-primary">Editar perfil</button></a>
-                            <a href="carona.html"><button type="button" class="btn btn-outline-danger ms-1">Sair</button></a>
+                            &nbsp;&nbsp;
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" role="button">
+                                    <button type="button" class="btn btn-outline-danger">Sair</button>
+                                </a>
+                            </form>
+                            
+                            <!-- <a href=""><button type="button" class="btn btn-outline-danger ms-1">Sair</button></a> -->
                         </div>
                     </div>
                 </div>
