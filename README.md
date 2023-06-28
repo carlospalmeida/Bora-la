@@ -9,10 +9,9 @@
 
 O site Borá-la é voltado para auxiliar e facilitar o usuário em relação ao transporte urbano podendo ver horários, linhas e até mesmo itinerário do transporte público de sua cidade, também possibilitando o pedido de carona através do site.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Simples, Funcional e facil de enteder.
+- Interface [simples](http://localhost:8000/) para a melhor experiencia
+- Sem cobranças abusivas no sistema [carona](https://laravel.com/docs/eloquent).
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
