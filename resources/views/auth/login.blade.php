@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <img src="/public/images/LOGO.svg">
+            <img src="images/LOGO.png" width="130px">
         </x-slot>
 
         <x-validation-errors class="mb-4" />

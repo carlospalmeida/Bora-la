@@ -13,7 +13,7 @@
 <div class="col-md-6">
     <h2>Linhas</h2>
     <form class="col-md-4">
-        
+
         <input class="form-control mr-sm-2 align-items-center" type="search" placeholder="Pesquisar linha" aria-label="Search">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button>
 

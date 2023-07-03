@@ -89,7 +89,32 @@
 
 </div>
 
-<div class="col-md-9">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6168.468081019774!2d-45.85544711178482!3d-23.17775156556277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4bc96c8e4b37%3A0x961089d48d0b5240!2sSenac%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos!5e0!3m2!1spt-BR!2sbr!4v1682538140621!5m2!1spt-BR!2sbr" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+<script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
+<script type='text/javascript' src="{{url('/')}}/js/moblie.js"></script>
+<script>
+    var renderMap = (lg, lt) => {
+        var latlong = new tt.LngLat(lg, lt);
+        var map = tt.map({
+            key: 'PGoU54kuG7mGC31MVAf6gG2m9iNT1B1C',
+            container: 'map',
+            dragPan: !isMobileOrTablet(),
+            center: latlong,
+            zoom: 18
+        });
+        map.addControl(new tt.FullscreenControl());
+        map.addControl(new tt.NavigationControl());
+    }
+
+    //captura latutude e longitude do navegador
+    //e renderiza o mapa
+    var long = 0;
+    var lat = 0;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((posic) => {
+            long = posic.coords.longitude;
+            lat = posic.coords.latitude;
+            renderMap(long, lat);
+        });
+    }
+</script>
 @endsection

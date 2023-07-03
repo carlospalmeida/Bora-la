@@ -54,7 +54,7 @@
 
     <!-- mostra a viagem necessaria para ir ao destino -->
 
-    <h5>Viagem:</h5>
+    <h5>Rotas sugeridas:</h5>
     <div class="card">
         <div class="card-body">
             <p class="card-text">va para o ponto x</p>
@@ -94,6 +94,9 @@
             long = posic.coords.longitude;
             lat = posic.coords.latitude;
             renderMap(long, lat);
+
+            
+            
         });
     }
 </script>

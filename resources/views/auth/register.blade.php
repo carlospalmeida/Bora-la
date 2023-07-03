@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-           
+            <img src="images/LOGO.png" width="130px">
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -10,7 +10,7 @@
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
+                <x-label for="name" value="{{ __('Nome') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
@@ -20,18 +20,30 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Senha') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-label for="password_confirmation" value="{{ __('Confirmar Senha') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <h5 class="mt-5">Opções para quem deseja ser motorista:</h5>
+
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('cnh') }}" />
-                <x-input id="cnh" class="block mt-1 w-full" type="text" name="cnh" />
+                <x-label for="cnh" value="{{ __('CNH') }}" />
+                <x-input id="cnh" class="block mt-1 w-full" type="number" name="cnh" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="crlv" value="{{ __('CRLV') }}" />
+                <x-input id="crlv" class="block mt-1 w-full" type="text" name="crlv" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="reg" value="{{ __('Região de serviço') }}" />
+                <x-input id="reg" class="block mt-1 w-full" type="text" name="reg" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
