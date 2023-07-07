@@ -10,25 +10,55 @@
 O site Borá-la é voltado para auxiliar e facilitar o usuário em relação ao transporte urbano podendo ver horários, linhas e até mesmo itinerário do transporte público de sua cidade, também possibilitando o pedido de carona através do site.
 
 - Simples, Funcional e facil de enteder.
-- Interface [simples](http://localhost:8000/) para a melhor experiencia
-- Sem cobranças abusivas no sistema [carona](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Interface logica e sem complexiade.
+- Sem cobranças abusivas no sistema carona
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+O borá-la foi pensado e desenvolvido num curso de habilitação tecnica de informatica como projeto,todos os recursos e tecnologias utilizadas são de natureza gratuita e sem cobrança,utilizar o web-site é gratuito e não há nenhum tipo de cobrança.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tecnologias
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Linguagens:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- `php`
+- `css`
+- `html`
+- `JavaScript`
 
-## Laravel Sponsors
+### Frameworks:
+- [Laravel](https://laravel.com/)
+- `Nodejs`
+- `Blade`
+- [Bootstrap 5](https://getbootstrap.com/)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Api´s:
+- [TomTom](https://www.tomtom.com/)
+- [IBGE]()
+
+
+## Funcionalidades e funcionamento:
+
+O projeto está em fase de desenvolvimento na sua versão beta 0.1 então os recursos serão divididos em `implementados` e `a ser implementados`.
+
+### Implementados:
+- `Mapa dínamico`
+- `Selecionar Regiões`
+- `Linhas funcionais ESTATICAS¹`
+- `Gerenciar Perfil`
+
+### A ser implementados:
+- `Calcular rotas de transporte coletivo`
+- `Pedir e efetuar Carona`
+- `Ver etinerarios e linhas do transporte coletivo de sua região`
+- `Comparar preços de carona ao solicitado`
+- `Calcular a melhor rota de transporte coletivo`
+
+<svg width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 10V13" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+<path d="M12 16V15.9888" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+<path d="M10.2518 5.147L3.6508 17.0287C2.91021 18.3618 3.87415 20 5.39912 20H18.6011C20.126 20 21.09 18.3618 20.3494 17.0287L13.7484 5.147C12.9864 3.77538 11.0138 3.77538 10.2518 5.147Z" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 
+ 1. as linhas estaticas são da cidade de são josé dos campos caso queira atualizar ou mudar estas linhas basta substituir o arquivo em public storage linhassjc
 
 ### Premium Partners
 

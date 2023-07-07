@@ -27,22 +27,30 @@
             <x-label for="password_confirmation" value="{{ __('Confirmar Senha') }}" />
         </div>
 
-        <h5 class="mt-5">Opções para quem deseja ser motorista:</h5>
-
-        <div class="mt-4 form-floating">
-            <x-input id="cnh" class="block mt-1 w-full form-control" type="number" name="cnh" />
-            <x-label for="cnh" value="{{ __('CNH') }}" />
+        <div class="mt-4">
+            <x-label for="tipo" value="{{ __('Tipo de usuário') }}" />
+            <select id="tipo" class="block mt-1 w-50 form-select" name="tipo" required>
+                <option value="">Selecione</option>
+                <option value="passageiro">Pasageiro</option>
+                <option value="motorista">Motorista</option>
+            </select>
         </div>
 
         <div class="mt-4 form-floating">
-            <x-input id="crlv" class="block mt-1 w-full form-control" type="text" name="crlv" />
-            <x-label for="crlv" value="{{ __('CRLV') }}" />
+            <x-input id="carro" class="block mt-1 w-full form-control" type="text" name="carro"/>
+            <x-label for="password_confirmation" value="{{ __('Modelo do carro') }}" />
         </div>
 
         <div class="mt-4 form-floating">
-            <x-input id="reg" class="block mt-1 w-full form-control" type="text" name="reg" />
-            <x-label for="reg" value="{{ __('Região de serviço') }}" />
+            <x-input id="cnh" class="block mt-1 w-full form-control" type="text" name="cnh"/>
+            <x-label for="cnh" value="{{ __('Insira sua cnh') }}" />
         </div>
+
+        <div class="mt-4 form-floating">
+            <x-input id="telefone" class="block mt-1 w-full form-control" type="text" name="telefone"/>
+            <x-label for="password_confirmation" value="{{ __('Insira seu número de whatszap') }}" />
+        </div>
+
 
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
         <div class="mt-4">
@@ -63,12 +71,12 @@
 
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Já é registrado!') }}
+                {{ __('Já é registrado?') }}
             </a>
 
-            &nbsp;&nbsp;&nbsp;                    
+            &nbsp;&nbsp;&nbsp;
 
-            <x-button class="ml-4">
+            <x-button class="ml-4 btn btn-success">
                 {{ __('Registrar') }}
             </x-button>
         </div>
