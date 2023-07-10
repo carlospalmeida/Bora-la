@@ -5,6 +5,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+[<img src = "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/carlospalmeida)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/carlos-eduardo-pereira-almeida-251b03239/)
+
+<!-- [<img src = "https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white">](https://www.instagram.com/guiadevbrasil/) -->
+
+
 ## Sobre Borá-la
 
 O site Borá-la é voltado para auxiliar e facilitar o usuário em relação ao transporte urbano podendo ver horários, linhas e até mesmo itinerário do transporte público de sua cidade, também possibilitando o pedido de carona através do site.
@@ -42,8 +48,8 @@ O projeto está em fase de desenvolvimento na sua versão beta 0.1 então os rec
 
 ### Implementados:
 - `Mapa dínamico`
-- `Selecionar Regiões`
-- `Linhas funcionais ESTATICAS¹`
+- `Selecionar Regiões¹`
+- `Linhas funcionais ESTATICAS²`
 - `Gerenciar Perfil`
 
 ### A ser implementados:
@@ -53,44 +59,79 @@ O projeto está em fase de desenvolvimento na sua versão beta 0.1 então os rec
 - `Comparar preços de carona ao solicitado`
 - `Calcular a melhor rota de transporte coletivo`
 
-<svg width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 10V13" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-<path d="M12 16V15.9888" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-<path d="M10.2518 5.147L3.6508 17.0287C2.91021 18.3618 3.87415 20 5.39912 20H18.6011C20.126 20 21.09 18.3618 20.3494 17.0287L13.7484 5.147C12.9864 3.77538 11.0138 3.77538 10.2518 5.147Z" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg> 
- 1. as linhas estaticas são da cidade de são josé dos campos caso queira atualizar ou mudar estas linhas basta substituir o arquivo em public storage linhassjc
+<br>
 
-### Premium Partners
+- 1.1 as regiões não alteram o mapa e as linhas
+pelo mesmo ser estatico.
+<br>
+- 1.2 as linhas estaticas são da cidade de são josé dos campos caso queira atualizar ou mudar estas linhas basta substituir o arquivo em `public->storage->linhassjc`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+ 
 
-## Contributing
+### Inicialização e alteração:
+
+- **Tenha instalado o [`XAMPP`](https://www.apachefriends.org/pt_br/download.html) para iniciar em localhost**
+#### Alteração do mapa
+- **para alterar a localização por ip do mapa ou por uma localizacão estatica vá em `resources->views->caminho.blade`** no final do codigo hávera:
+<br>
+
+~~~html
+<!-- div para renderizar o map -->
+<div class="col-md-9" id="map"></div>
+
+<!-- script de carregamento do tomtom -->
+<script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
+<script type='text/javascript' src="{{url('/')}}/js/moblie.js"></script>
+~~~
+
+
+```javaScript
+//cogido javascript
+<script>
+    var renderMap = (lg, lt) => {
+        var latlong = new tt.LngLat(lg, lt);
+        var map = tt.map({
+            key: 'sua chave API',
+            container: 'map',
+            dragPan: !isMobileOrTablet(),
+            center: latlong,
+            zoom: 18
+        });
+        map.addControl(new tt.FullscreenControl());
+        map.addControl(new tt.NavigationControl());
+    }
+
+    //captura latutude e longitude do navegador
+    //e renderiza o mapa
+    var long = 0;
+    var lat = 0;
+    if (navigator.geolocation) {
+        //aqui ele pega a localização pelo ip da maquina
+        navigator.geolocation.getCurrentPosition((posic) => {
+            long = posic.coords.longitude;
+            lat = posic.coords.latitude;
+            renderMap(long, lat);
+
+            
+            
+        });
+    }
+</script>
+```
+
+É necessario ter o arquivo `mobile.js` com o codigo da documentação da [Api](https://www.tomtom.com/) que esta em `public->js` Ja existe um arquivo com o nome `mobile.js` não há necessidade de criar outro.
+
+
+
+
+
+## Contribuição:
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+O projeto usa a licença do tipo [MIT license](https://opensource.org/licenses/MIT) pode ser mudada no futuro.
 
 
  

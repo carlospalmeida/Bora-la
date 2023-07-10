@@ -51,6 +51,13 @@
         </select>
     </div>
 
+    <h5>Escolher linhas por cidade:</h5>
+    <div class="mb-3" id="regiaodiv">
+        <select class="form-select form-select-lg" name="" id="regiao">
+            
+        </select>
+    </div>
+    
 
     <!-- mostra a viagem necessaria para ir ao destino -->
 
@@ -65,12 +72,18 @@
 
 
 
+
+
 </div>
 
+<!-- div para renderizar o map -->
 <div class="col-md-9" id="map"></div>
 
+<!-- script do tomtom -->
 <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
 <script type='text/javascript' src="{{url('/')}}/js/moblie.js"></script>
+<!-- script do ibge -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script>
     var renderMap = (lg, lt) => {
         var latlong = new tt.LngLat(lg, lt);
@@ -99,6 +112,19 @@
             
         });
     }
+
+    // Pegar cidades por estado
+
+    let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/35/municipios';
+    $.getJSON(url, (data)=>{
+        let conteudo = '<ul>';
+        $.each(data,(v,val)=>{
+            conteudo += '<option>'+val.nome+'</option>'
+        })
+        conteudo += '</ul>'
+
+        $("#regiao").html(conteudo)
+    });
 </script>
 
 @endsection
