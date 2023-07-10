@@ -63,7 +63,7 @@ O projeto está em fase de desenvolvimento na sua versão beta 0.1 então os rec
 
 - 1.1 as regiões não alteram o mapa e as linhas
 pelo mesmo ser estatico.
-<br>
+
 - 1.2 as linhas estaticas são da cidade de são josé dos campos caso queira atualizar ou mudar estas linhas basta substituir o arquivo em `public->storage->linhassjc`
 
  
@@ -112,7 +112,18 @@ pelo mesmo ser estatico.
             lat = posic.coords.latitude;
             renderMap(long, lat);
 
-            
+        // Pegar cidades por estado
+
+        let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/35/municipios';
+        $.getJSON(url, (data)=>{
+        let conteudo = '<ul>';
+        $.each(data,(v,val)=>{
+            conteudo += '<option>'+val.nome+'</option>'
+        })
+        conteudo += '</ul>'
+
+        $("#regiao").html(conteudo)
+    });
             
         });
     }
