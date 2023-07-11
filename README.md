@@ -68,10 +68,30 @@ pelo mesmo ser estatico.
 
  
 
-### Inicialização e alteração:
+### Inicialização da aplicação e alteração:
 
-- **Tenha instalado o [`XAMPP`](https://www.apachefriends.org/pt_br/download.html) para iniciar em localhost**
-#### Alteração do mapa
+
+
+- Tenha instalado o [`XAMPP`](https://www.apachefriends.org/pt_br/download.html) para iniciar em localhost
+
+- instale os arquivos corretamente pelo [github](https://github.com/carlospalmeida/Bora-la)
+
+- coloque os arquivos na pasta `xampp->htdocs`,vale lembra que a pasta xamp fica no C: no caso do windows
+
+- Abre com seu editor de codigo(recomendo o vscode) e inicialize os servidores locais com os seguintes comandos:
+
+~~~~
+npm run dev
+~~~~
+
+~~~~php
+php artisan serve
+~~~~
+
+- para acessar o web-site vá no navegador e digite `localhost:8000`
+
+#### **Alteração do mapa**
+
 - **para alterar a localização por ip do mapa ou por uma localizacão estatica vá em `resources->views->caminho.blade`** no final do codigo hávera:
 <br>
 
