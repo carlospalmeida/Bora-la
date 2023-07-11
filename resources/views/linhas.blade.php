@@ -24,5 +24,30 @@
         <button type="button" class="list-group-item list-group-item-action">Item</button>
         <button type="button" class="list-group-item list-group-item-action">Disabled item</button>
     </div>
+
+    <div class="mb-3 mt-5" id="regiaodiv">
+        <h5>Linhas por cidade</h5>
+        <select class="form-select form-select-lg" name="regiaolinhas" id="regiao">
+        </select>
+    </div>
+
 </div>
+
+<!-- script do ibge -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    // Pegar cidades por estado
+
+    let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/35/municipios';
+    $.getJSON(url, (data) => {
+        let conteudo = '<ul>';
+        $.each(data, (v, val) => {
+            conteudo += '<option>' + val.nome + '</option>'
+        })
+        conteudo += '</ul>'
+
+        $("#regiao").html(conteudo)
+
+    });
+</script>
 @endsection

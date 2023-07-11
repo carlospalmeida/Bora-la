@@ -153,9 +153,6 @@ php artisan serve
 É necessario ter o arquivo `mobile.js` com o codigo da documentação da [Api](https://www.tomtom.com/) que esta em `public->js` Ja existe um arquivo com o nome `mobile.js` não há necessidade de criar outro.
 
 
-
-
-
 ## Contribuição:
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).

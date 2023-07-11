@@ -124,6 +124,7 @@
         conteudo += '</ul>'
 
         $("#regiao").html(conteudo)
+        
     });
 </script>
 
