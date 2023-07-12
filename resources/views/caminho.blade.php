@@ -1,3 +1,6 @@
+<?php
+
+?>
 @extends('app')
 
 @section('conteudo')
@@ -54,10 +57,10 @@
     <h5>Escolher linhas por cidade:</h5>
     <div class="mb-3" id="regiaodiv">
         <select class="form-select form-select-lg" name="" id="regiao">
-            
+
         </select>
     </div>
-    
+
 
     <!-- mostra a viagem necessaria para ir ao destino -->
 
@@ -108,24 +111,25 @@
             lat = posic.coords.latitude;
             renderMap(long, lat);
 
-            
-            
+
+
         });
     }
 
     // Pegar cidades por estado
 
     let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/35/municipios';
-    $.getJSON(url, (data)=>{
+    $.getJSON(url, (data) => {
         let conteudo = '<ul>';
-        $.each(data,(v,val)=>{
-            conteudo += '<option>'+val.nome+'</option>'
+        $.each(data, (v, val) => {
+            conteudo += '<option>' + val.nome + '</option>'
         })
         conteudo += '</ul>'
 
         $("#regiao").html(conteudo)
-        
+
     });
 </script>
+
 
 @endsection

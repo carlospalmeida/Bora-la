@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Linhascontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,15 @@ Route::get('/termos', function () {
     return view('termos');
 })->name('termos');
 
+Route::get('/teste',[Linhascontroller::class, 'insertlinhas'])->name('teste');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    
+
     Route::get('/dashboard', function () {
         return view('carona');
     })->name('dashboard');
@@ -42,9 +46,8 @@ Route::middleware([
     // Route::get('/carona', function () {
     //     return view('carona');
     // })->name('carona');
-    
+
     Route::get('/perfil', function () {
         return view('perfil');
     })->name('perfil');
-
 });
