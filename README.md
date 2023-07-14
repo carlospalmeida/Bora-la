@@ -155,7 +155,7 @@ php artisan serve
 
 ## Contribuição:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Agradecer a instituição Senac são josé dos campos por disponiblilizar o espaço,equipamento e diversos recursos pro prejeto e aos docentes pela coloboração e ajuda no desenvolvimento.
 
 ## License
 
