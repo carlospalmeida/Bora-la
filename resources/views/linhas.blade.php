@@ -26,7 +26,7 @@
     </div>
 
     <div class="mb-3 mt-5" id="regiaodiv">
-        <h5>Linhas por cidade</h5>
+        <h5>Alterar região</h5>
         <select class="form-select form-select-lg" name="regiaolinhas" id="regiao">
         </select>
     </div>
@@ -39,7 +39,7 @@
 <script>
     // Pegar cidades por estado
 
-    let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/35/municipios';
+    let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes/3505|3506|3507|3508|3509|3510|3511|3512|3513|3514|3515';
     $.getJSON(url, (data) => {
         let conteudo = '<ul>';
         $.each(data, (v, val) => {

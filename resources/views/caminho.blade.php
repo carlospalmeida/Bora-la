@@ -54,14 +54,7 @@
         </select>
     </div>
 
-    <h5>Escolher linhas por cidade:</h5>
-    <div class="mb-3" id="regiaodiv">
-        <select class="form-select form-select-lg" name="" id="regiao">
-
-        </select>
-    </div>
-
-
+    
     <!-- mostra a viagem necessaria para ir ao destino -->
 
     <h5>Rotas sugeridas:</h5>

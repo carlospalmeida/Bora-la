@@ -22,13 +22,26 @@ class Linhascontroller extends BaseController
         //Loop through the rows in our CSV file and add them to
         //the PHP array that we created above.
         while (($row = fgetcsv($fh, 0, ";")) !== FALSE) {
-            $csvData[] = $row;
+            //print_r($row);
+            $csvData[] = ["itinerario"=>$row[0], "nomelinha"=>$row[1]];
+            //$csvData[] = $row[0];
+            // print_r($row);
+            // 
         }
+
         //dd($csvData);
-        $linha = new Linha;
-        $linha->itinerario = $csvData[0];
-        $linha->nomelinha = $csvData[1];
-        $linha->save();
+
+        foreach ($linha as $key => $linha) {
+            $linha = new Linha;
+            $linha->itinerario = $csvData[0];
+            $linha->nomelinha = $csvData[1];
+            //print_r($linha);
+            //$linha->save();
+            //dd($linha);
+            dd($csvData);
+            Linha::create($csvData);
+        }
+
 
 
         //Finally, encode our array into a JSON string format so that we can print it out.
