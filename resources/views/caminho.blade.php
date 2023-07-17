@@ -39,28 +39,27 @@
     <h5>Linhas proximas de você:</h5>
     <div class="mb-3">
         <select class="form-select form-select-lg" name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
+            @foreach($linhas2 as $linha)
+            <option value="">{{$linha->itinerario}}</option>
+            @endforeach
         </select>
     </div>
 
     <h5>Pontos e terminais proximas á você:</h5>
     <div class="mb-3">
         <select class="form-select form-select-lg" name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
+            <option value="">Rua Saigiro Nakamura</option>
+            <option value="">Av Pres Juscelino Kubitschek</option>
         </select>
     </div>
 
-    
+
     <!-- mostra a viagem necessaria para ir ao destino -->
 
     <h5>Rotas sugeridas:</h5>
     <div class="card">
         <div class="card-body">
-            <p class="card-text">va para o ponto x</p>
+            <p class="card-text"> 231->🚶‍♂️5min->304</p>
         </div>
     </div>
 
@@ -103,8 +102,6 @@
             long = posic.coords.longitude;
             lat = posic.coords.latitude;
             renderMap(long, lat);
-
-
 
         });
     }

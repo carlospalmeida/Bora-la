@@ -14,23 +14,19 @@ use App\Http\Controllers\Linhascontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('caminho');
-});
+// Route::get('/', function () {
+//     return view('caminho');
+// });
 
-Route::get('/caminho', function () {
-    return view('caminho');
-})->name('caminho');;
+Route::get('/', [Linhascontroller::class, 'read2']);
 
-Route::get('/linhas', function () {
-    return view('linhas');
-})->name('linhas');
+Route::get('/linhas',[Linhascontroller::class, 'read'])->name('linhas');
 
 Route::get('/termos', function () {
     return view('termos');
 })->name('termos');
 
-Route::get('/teste',[Linhascontroller::class, 'insertlinhas'])->name('teste');
+Route::get('/linhasbd',[Linhascontroller::class, 'insertlinhas'])->name('linhasbd');
 
 
 Route::middleware([

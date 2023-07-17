@@ -18,7 +18,7 @@ body {
   background-color: #C4EAF2;
 }
 
-.cor{
+.cor {
   background-color: #C4EAF2;
 }
 
@@ -32,6 +32,19 @@ body {
 
 .acord:hover {
   background-color: #b3daf2d5;
+}
+
+.emlinha {
+  display: inline-block;
+}
+
+.bus{
+  border-bottom: solid;
+  border-bottom-color: #a8cf45
+}
+
+.busprincipal{
+  text-decoration-line: overline;
 }
 
 #Linha {
@@ -162,4 +175,3 @@ body {
   -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-

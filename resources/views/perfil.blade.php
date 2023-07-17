@@ -10,11 +10,11 @@
                         <!-- imagem de perfil -->
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                         <!--  -->
-                        <h5 class="my-3">Nome do Usuario</h5>
-                        <p class="text-muted mb-1">Motorista/Passageiro</p>
+                        <h5 class="my-3">{{Auth()->user()->name}}</h5>
+                        <p class="text-muted mb-1">{{Auth()->user()->tipo}}</p>
                         <p class="text-muted mb-4">São josé dos campos, SP</p>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="#"><button type="button" class="btn btn-primary">Editar perfil</button></a>
+                            <a href="#"><button type="button" class="btn btn-primary" disabled>Editar perfil</button></a>
                             &nbsp;&nbsp;
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -63,16 +63,16 @@
                                 <p class="mb-0">Nome</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">Seu nome</p>
+                                <p class="text-muted mb-0">{{Auth()->user()->name}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Disponiblilidade</p>
+                                <p class="mb-0">Tipo de usuario</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0"><strong>Ativo</strong></p>
+                                <p class="text-muted mb-0"><strong>{{Auth()->user()->tipo}}</strong></p>
                             </div>
                         </div>
                     </div>
