@@ -159,7 +159,4 @@ Agradecer a instituição Senac são josé dos campos por disponiblilizar o espa
 
 ## License
 
-O projeto usa a licença do tipo [MIT license](https://opensource.org/licenses/MIT) pode ser mudada no futuro.
-
-
- 
+O projeto usa a licença do tipo [MIT license](https://opensource.org/licenses/MIT) que pode ser alterada no futuro.
