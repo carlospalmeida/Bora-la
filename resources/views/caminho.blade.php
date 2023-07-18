@@ -1,6 +1,3 @@
-<?php
-
-?>
 @extends('app')
 
 @section('conteudo')
@@ -13,18 +10,12 @@
 
 
     <!-- Form de ponto partida -->
-    <div class="mb-3">
+    <div class="mb-1">
         <label for="" class="form-label">
             <h5>Ponto de partida:</h5>
         </label>
-        <input type="text" class="form-control" name="PontoInicio" id="PontoInicio" aria-describedby="helpId" placeholder="">
-        <label for="" class="form-label">
-            <a href="" id="localatual">
-                <h5>
-                    <img src="images/ic-current-location_97657.png" width="20px" id="LocaAtual"> Local atual
-                </h5>
-            </a>
-        </label>
+        <input type="text" class="form-control" name="txt_inicio" id="txt_inicio" aria-describedby="helpId" placeholder="">
+        <label for="" class="form-label"></label>
     </div>
 
     <!-- Form destino -->
@@ -32,7 +23,7 @@
         <label for="" class="form-label">
             <h5>Destino:</h5>
         </label>
-        <input type="text" class="form-control" name="PontoInicio" id="PontoInicio" aria-describedby="helpId" placeholder="">
+        <input type="text" class="form-control" name="txt_final" id="txt_final" aria-describedby="helpId" placeholder="">
     </div>
 
     <!-- Mostra as linhas/onibus proximo do usuario -->
@@ -62,23 +53,19 @@
             <p class="card-text"> 231->🚶‍♂️5min->304</p>
         </div>
     </div>
-
-
-
-
-
-
-
 </div>
 
+
 <!-- div para renderizar o map -->
-<div class="col-md-9" id="map"></div>
+<div id="map" class="col-md-9"></div>
 
 <!-- script do tomtom -->
 <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js'></script>
 <script type='text/javascript' src="{{url('/')}}/js/moblie.js"></script>
 <!-- script do ibge -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
 <script>
     var renderMap = (lg, lt) => {
         var latlong = new tt.LngLat(lg, lt);

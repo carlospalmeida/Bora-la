@@ -19,6 +19,11 @@
 
     <link rel='stylesheet' type='text/css' href="{{url('/')}}/css/tomtom.css">
 
+    <!-- Leafleft CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" href="{{url('/')}}/css/leaflet-routing-machine.css" />
+
 </head>
 
 <body class="pt-5">
@@ -65,9 +70,9 @@
         <!-- Barra lateral -->
         <div class="container mt-5" id="BarraLateralEsquerda">
             <div class="row">
-                
+
                 @yield('conteudo')
-               
+
             </div>
         </div>
 
@@ -95,6 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 
+    
     <!-- js personalizado -->
     <!-- <script src="JS/code.js"></script>
 
